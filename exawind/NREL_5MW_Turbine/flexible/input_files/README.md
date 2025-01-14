@@ -1,1 +1,3 @@
-placeholder file; put all necessary input files here along with a link to the mesh file
+# NREL 5MW In ABL 
+
+- Local file paths will be replaced with DVC file paths
