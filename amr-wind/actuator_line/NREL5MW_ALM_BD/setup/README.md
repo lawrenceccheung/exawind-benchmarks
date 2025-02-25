@@ -1,4 +1,4 @@
-# Setting up the sinngle turbine NREL5MW case in AMR-Wind
+# Setting up the single turbine NREL5MW case in AMR-Wind
 
 **Contents**
 - [Prerequisites](#prerequisites)
