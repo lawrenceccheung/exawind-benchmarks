@@ -12,16 +12,13 @@ amrwindfedirs = ['/projects/wind_uq/lcheung/amrwind-frontend/',
 import sys, os, shutil, io
 for x in amrwindfedirs: sys.path.insert(1, x)
 
-get_ipython().run_line_magic('matplotlib', 'inline')
-
 import postproamrwindsample_xarray as ppsample
 import postproengine as ppeng
 import numpy as np
 import pandas as pd
 
 import matplotlib.pyplot as plt
-get_ipython().run_line_magic('matplotlib', 'inline')
-
+plt.show(block=False)
 
 # In[2]:
 

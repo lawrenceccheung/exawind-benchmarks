@@ -12,16 +12,13 @@ amrwindfedirs = ['/projects/wind_uq/lcheung/amrwind-frontend/',
 import sys, os, shutil, io
 for x in amrwindfedirs: sys.path.insert(1, x)
 
-get_ipython().run_line_magic('matplotlib', 'inline')
-
 import postproamrwindsample_xarray as ppsample
 import postproengine as ppeng
 import numpy as np
 import pandas as pd
 
 import matplotlib.pyplot as plt
-get_ipython().run_line_magic('matplotlib', 'inline')
-
+plt.show(block=False)
 
 # In[2]:
 
@@ -115,7 +112,7 @@ plotcsv:
     xlabel: 'Time [s]'
     ylabel: 'RotThrust [kN]'
     title: 'Turbine thrust'
-    figsize: [10,3.5]
+    figsize: [10,4]
     legendopts: {'loc':'upper right'}
     savefile: ../results/images/OpenFAST_T0_RotThrust.png
     csvfiles:
@@ -126,7 +123,7 @@ plotcsv:
     xlabel: 'Time [s]'
     ylabel: 'RPM [rpm]'
     title: 'Rotor speed'
-    figsize: [10,3.5]
+    figsize: [10,4]
     legendopts: {'loc':'upper right'}
     savefile: ../results/images/OpenFAST_T0_RotSpeed.png
     csvfiles:
@@ -137,7 +134,7 @@ plotcsv:
     xlabel: 'Time [s]'
     ylabel: 'Pitch [deg]'
     title: 'Blade pitch'
-    figsize: [10,3.5]
+    figsize: [10,4]
     legendopts: {'loc':'upper right'}
     savefile: ../results/images/OpenFAST_T0_BldPitch1.png
     csvfiles:
@@ -148,7 +145,7 @@ plotcsv:
     xlabel: 'Time [s]'
     ylabel: 'Torque'
     title: 'Rotor Torque'
-    figsize: [10,3.5]
+    figsize: [10,4]
     legendopts: {'loc':'upper right'}
     savefile: ../results/images/OpenFAST_T0_RotTorq.png
     csvfiles:
@@ -167,7 +164,7 @@ yamldict = Loader(f, **loaderkwargs)
 ppeng.driver(yamldict, verbose=True)
 
 
-# In[7]:
+# In[10]:
 
 
 # Write out the notebook to a python script
