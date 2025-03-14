@@ -57,7 +57,7 @@ ppeng.formatplot = formatplot
 # In[3]:
 
 
-replacedict={'RUNDIR':'/nscratch/gyalla/HFM/exawind-benchmarks/amr-wind/NREL5MW_ALM_BD/runs/',
+replacedict={'RUNDIR':'/gpfs/lcheung/HFM/exawind-benchmarks/NREL5MW_ALM_BD_OFv402_ROSCO/',
             }
 
 
@@ -165,7 +165,7 @@ f = io.StringIO(stringReplaceDict(yamlstring, replacedict))
 yamldict = Loader(f, **loaderkwargs)
 
 
-# In[5]:
+# In[ ]:
 
 
 # Run the driver
@@ -175,5 +175,4 @@ ppeng.driver(yamldict, verbose=True)
 # In[ ]:
 
 
-
-
+# Write out the notebook to a python script

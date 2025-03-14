@@ -42,8 +42,8 @@ modelparams:
     OutFileFmt: 3
   ServoFile:
     # THIS ROSCO PATH NEEDS TO BE EDITED!
-    #DLL_FileName: PLEASEEDITTHIS
-    DLL_FileName: /projects/wind_uq/lcheung/amrwind-frontend/turbines/OpenFAST_NREL2p8-127_AWAKEN/libdiscon.so
+    DLL_FileName: PLEASEEDITTHIS
+    #DLL_FileName: /projects/wind_uq/lcheung/amrwind-frontend/turbines/OpenFAST_NREL2p8-127_AWAKEN/libdiscon.so
     Ptch_Cntrl: 1
   AeroFile:
     Wake_Mod: 0

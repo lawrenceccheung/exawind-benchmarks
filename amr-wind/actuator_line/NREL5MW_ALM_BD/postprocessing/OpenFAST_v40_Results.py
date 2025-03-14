@@ -57,7 +57,7 @@ def stringReplaceDict(s, dreplace):
 #rundir='/gpfs/lcheung/HFM/exawind-benchmarks/NREL5MW_ALM_BD_OFv400'
 #RESULTSDIR='../results/OpenFAST_v40_out'
 
-replacedict={'RUNDIR':'/nscratch/gyalla/HFM/exawind-benchmarks/amr-wind/NREL5MW_ALM_BD/runs/',
+replacedict={'RUNDIR':'/gpfs/lcheung/HFM/exawind-benchmarks/NREL5MW_ALM_BD_OFv402_ROSCO/',
              'RESULTSDIR':'../results/OpenFAST_v402_out',
              'RESULTSOLDDIR':'../results/OpenFAST_out'
             }
@@ -79,7 +79,7 @@ trange: &trange [300, 900]   # Note: add 15,000 sec to get AMR-Wind time
 openfast:
 # For FSI case
 - name: NREL5MW
-  filename: RUNDIR/T0_NREL5MW_v402/openfast-cpp/5MW_Land_DLL_WTurb_cpp/5MW_Land_DLL_WTurb_cpp.out
+  filename: RUNDIR/T0_NREL5MW_v402_ROSCO/openfast-cpp/5MW_Land_DLL_WTurb_cpp/5MW_Land_DLL_WTurb_cpp.out
   #filename: /nscratch/gyalla/HFM/exawind-benchmarks/amr-wind/NREL5MW_ALM_BD/runs/T0_NREL5MW_v402/openfast-cpp/5MW_Land_DLL_WTurb_cpp/5MW_Land_DLL_WTurb_cpp.out
   vars:
   - Time
@@ -164,7 +164,7 @@ yamldict = Loader(f, **loaderkwargs)
 ppeng.driver(yamldict, verbose=True)
 
 
-# In[10]:
+# In[7]:
 
 
 # Write out the notebook to a python script

@@ -90,8 +90,8 @@ bliststr  = '[Time, '+', '.join(blist)+']'
 
 
 # Get the blade stations
-rundir = '/nscratch/gyalla/HFM/exawind-benchmarks/amr-wind/NREL5MW_ALM_BD/runs/'
-bladefile = rundir+'/T0_NREL5MW_v402/openfast/5MW_Baseline/NRELOffshrBsline5MW_AeroDyn_blade.dat'
+rundir = '/gpfs/lcheung/HFM/exawind-benchmarks/NREL5MW_ALM_BD_OFv402_ROSCO/'
+bladefile = rundir+'/T0_NREL5MW_v402_ROSCO/openfast/5MW_Baseline/NRELOffshrBsline5MW_AeroDyn_blade.dat'
 bladedat  = np.genfromtxt(bladefile, skip_header=6, skip_footer=2)
 
 
@@ -104,7 +104,7 @@ replacedict={'RUNDIR':rundir,
             }
 
 
-# In[ ]:
+# In[8]:
 
 
 yamlstring="""
@@ -119,7 +119,7 @@ trange: &trange [300, 900]   # Note: add 15,000 sec to get AMR-Wind time
 openfast:
 # For FSI case
 - name: NREL5MW_SECLOADS
-  filename: RUNDIR/T0_NREL5MW_v402/openfast-cpp/5MW_Land_DLL_WTurb_cpp/5MW_Land_DLL_WTurb_cpp.out
+  filename: RUNDIR/T0_NREL5MW_v402_ROSCO/openfast-cpp/5MW_Land_DLL_WTurb_cpp/5MW_Land_DLL_WTurb_cpp.out
   vars: BLADEVARS
   output_dir: RESULTSDIR
   csv:  # Store information to CSV files
@@ -133,14 +133,14 @@ f = io.StringIO(stringReplaceDict(yamlstring, replacedict))
 yamldict = Loader(f, **loaderkwargs)
 
 
-# In[ ]:
+# In[9]:
 
 
 # Run the driver
 ppeng.driver(yamldict, verbose=True)
 
 
-# In[ ]:
+# In[10]:
 
 
 d = makeSecBladeDF(replacedict['RESULTSDIR']+'/NREL5MW_SECLOADS_mean.csv', bladedat[:,0], blistdict)
@@ -149,7 +149,7 @@ pddf = pd.DataFrame(d).to_csv(replacedict['RESULTSDIR']+'/NREL5MW_SECLOADS_mean_
 
 # ## Plot the blade loading
 
-# In[ ]:
+# In[11]:
 
 
 yamlstring="""
@@ -169,7 +169,7 @@ plotcsv:
     title: 'Blade AOA'
     figsize: [10,4]
     legendopts: {'loc':'upper right'}
-    #savefile: 
+    savefile: ../results/images/OpenFAST_T0_AOA.png
     csvfiles:
     - {'file':'RESULTSDIR/NREL5MW_SECLOADS_mean_rpts.csv', 'xcol':'rpts', 'ycol':'Alpha', 'lineopts':{'color':'b', 'lw':1, 'linestyle':'-', 'label':'Alpha'}}    
     - {'file':'RESULTSDIR/NREL5MW_SECLOADS_mean_rpts.csv', 'xcol':'rpts', 'ycol':'Phi', 'lineopts':{'color':'r', 'lw':1, 'linestyle':'-', 'label':'Phi'}}  
@@ -180,7 +180,7 @@ plotcsv:
     title: 'Blade Cl/Cd'
     figsize: [10,4]
     legendopts: {'loc':'upper right'}
-    #savefile: 
+    savefile: ../results/images/OpenFAST_T0_ClCd.png
     csvfiles:
     - {'file':'RESULTSDIR/NREL5MW_SECLOADS_mean_rpts.csv', 'xcol':'rpts', 'ycol':'Cl', 'lineopts':{'color':'b', 'lw':1, 'linestyle':'-', 'label':'Cl'}}    
     - {'file':'RESULTSDIR/NREL5MW_SECLOADS_mean_rpts.csv', 'xcol':'rpts', 'ycol':'Cd', 'lineopts':{'color':'r', 'lw':1, 'linestyle':'-', 'label':'Cd'}}   
@@ -191,7 +191,7 @@ plotcsv:
     title: 'Blade loading'
     figsize: [10,4]
     legendopts: {'loc':'upper right'}
-    #savefile: 
+    savefile: ../results/images/OpenFAST_T0_FxFy.png
     csvfiles:
     - {'file':'RESULTSDIR/NREL5MW_SECLOADS_mean_rpts.csv', 'xcol':'rpts', 'ycol':'Fx', 'lineopts':{'color':'b', 'lw':1, 'linestyle':'-', 'label':'Fx'}}    
     - {'file':'RESULTSDIR/NREL5MW_SECLOADS_mean_rpts.csv', 'xcol':'rpts', 'ycol':'Fy', 'lineopts':{'color':'r', 'lw':1, 'linestyle':'-', 'label':'Fy'}}   
@@ -201,14 +201,14 @@ f = io.StringIO(stringReplaceDict(yamlstring, replacedict))
 yamldict = Loader(f, **loaderkwargs)
 
 
-# In[ ]:
+# In[12]:
 
 
 # Run the driver
 ppeng.driver(yamldict, verbose=True)
 
 
-# In[ ]:
+# In[13]:
 
 
 # Write out the notebook to a python script
