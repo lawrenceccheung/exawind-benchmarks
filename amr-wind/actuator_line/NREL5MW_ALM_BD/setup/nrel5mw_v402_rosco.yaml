@@ -40,6 +40,10 @@ modelparams:
     CompElast:  2  # use beamdyn
     CompInflow: 2
     OutFileFmt: 3
+    AirDens:    1.000
+  EDFile:
+    NacYaw:   30.0
+    YawDOF:   False
   ServoFile:
     # THIS ROSCO PATH NEEDS TO BE EDITED!
     DLL_FileName: PLEASEEDITTHIS
