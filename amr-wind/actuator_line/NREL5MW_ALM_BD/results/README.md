@@ -11,7 +11,13 @@ Averaged turbine performance from t=300s to t=900s
 
 |BldPitch1|RotSpeed|RotThrust|RotTorq |GenPwr|
 |---      | ----   |---      |---     |--- |
+|1.152    |11.701  |597.303  |3111.925|3621.650|
+
+<!-- OLD RESULTS FROM DISCON.DLL --
+|BldPitch1|RotSpeed|RotThrust|RotTorq |GenPwr|
+|---      | ----   |---      |---     |--- |
 |0.480    |11.819  |679.398  |3799.127|4460.008|
+-->
 
 ![](images/OpenFAST_T0_GenPwr.png)
 ![](images/OpenFAST_T0_RotThrust.png)

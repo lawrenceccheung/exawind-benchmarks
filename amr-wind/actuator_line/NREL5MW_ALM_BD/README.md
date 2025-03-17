@@ -4,6 +4,12 @@
 
 This atmospheric inflow for this case is generated via the [convectively unstable](../../atmospheric_boundary_layer/convective_abl_nrel5mw/) benchmark case.
 
-## Simulation Setup
+## Simulation description and setup
+
+![](results/images/NREL5MW_domain.png)
+
+## Postprocessing
 
 ## Results
+
+![Hub-height XY wake profile](results/images/WakeProfile_XY_300_900.png)
