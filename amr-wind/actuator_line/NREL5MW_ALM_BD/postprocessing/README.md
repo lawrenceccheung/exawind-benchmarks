@@ -1,9 +1,10 @@
-# Postprocessing AMR-Wind results
+# Postprocessing NREL5MW AMR-Wind results
 
 **Contents**
 - [OpenFAST turbine results](#openfast-turbine-results)
 - [OpenFAST blade loading profiles](#openfast-blade-loading-profiles)
 - [Contour plots](#contour-plots)
+- [Averaged wake profiles](#averaged-wake-profiles)
 
 The following document describes the post-processing procedures for the AMR-Wind turbine simulation.  
 

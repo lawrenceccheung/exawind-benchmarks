@@ -30,6 +30,8 @@ try:
     useruamel=True
     loaderkwargs = {'Loader':yaml.RoundTripLoader}
     dumperkwargs = {'Dumper':yaml.RoundTripDumper, 'indent':4, 'default_flow_style':False} 
+    yaml = yaml.YAML(typ='rt')
+    #yaml = YAML(typ='rt')
 except:
     import yaml as yaml
     print("# Loaded yaml")
@@ -79,7 +81,7 @@ plotstuff:
     ylabel: 'y/D'
     xscale: linear
     yscale: linear
-    title: 'XY Wake'
+    title: 'XY Wake Profiles'
     figsize: [6,6]
     legendopts: {'loc':'upper left'}
     savefile: ../results/images/WakeProfile_XY_300_900.png
@@ -101,10 +103,10 @@ plotstuff:
 
   - name: plotXZ
     xlabel: '$U/U_\infty$'
-    ylabel: 'z/D'
+    ylabel: 'z [m]'
     xscale: linear
     yscale: linear
-    title: 'XZ Wake'
+    title: 'XZ Wake Profiles'
     figsize: [6,6]
     legendopts: {'loc':'upper left'}
     savefile: ../results/images/WakeProfile_XZ_300_900.png
@@ -129,14 +131,14 @@ f = io.StringIO(stringReplaceDict(yamlstring, replacedict))
 yamldict = Loader(f, **loaderkwargs)
 
 
-# In[6]:
+# In[ ]:
 
 
 # Run the driver
 ppeng.driver(yamldict, verbose=True)
 
 
-# In[7]:
+# In[ ]:
 
 
 # Write out the notebook to a python script
