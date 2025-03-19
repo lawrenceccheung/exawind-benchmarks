@@ -1,6 +1,7 @@
 # Setting up the single turbine NREL5MW case in AMR-Wind
 
 **Contents**
+
 - [Prerequisites](#prerequisites)
 - [Step 1: create the run directory](#step-1-create-the-run-directory)
 - [Step 2: download the openfast model](#step-2-download-the-openfast-model)
@@ -157,6 +158,7 @@ The domain that is used in the NREL5MW case is the same as in the precursor ABL,
 The following changes need to be made to the default NREL5MW model.  These changes are automatically made `nrel5mw_v402_rosco.yaml`
 
 **OpenFAST FST file**
+
 |Parameter | Value | Comment |
 |---       | ---   | ---     |
 | DT       | 0.0008608815426997245 | Typically DT=0.005, but a smaller value is used for beamdyn |
@@ -183,6 +185,7 @@ The following changes need to be made to the default NREL5MW model.  These chang
 Some of these changes are necessary when coupling OpenFAST with AMR-Wind, and many of these parameters are chosen to maintain consistency with the blade-resolved version of the NREL5MW run.  
 
 Several of the settings related to blade-element momentum theory and unsteady aerodynamics model remain unchanged from the OpenFAST defaults.  For instance, the tip-loss and hub-loss models are not used in this simulation:
+
 ```
 --- BEM algorithm 
 True                   TipLoss     - Use the Prandtl tip-loss model? (flag) [unused when Wake_Mod=0 or 3]
@@ -195,6 +198,7 @@ False                  TIDrag      - Include the drag term in the tangential-ind
 ```
 
 and the default Beddoes-Leishman parameters are used here:
+
 ```
 ======  Unsteady Airfoil Aerodynamics Options  ====================================================
 False                  AoA34       - Sample the angle of attack (AoA) at the 3/4 chord or the AC point {default=True} [always used]

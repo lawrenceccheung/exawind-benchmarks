@@ -1,6 +1,7 @@
 # Postprocessing NREL5MW AMR-Wind results
 
 **Contents**
+
 - [OpenFAST turbine results](#openfast-turbine-results)
 - [OpenFAST blade loading profiles](#openfast-blade-loading-profiles)
 - [Contour plots](#contour-plots)
@@ -152,6 +153,7 @@ for x in [1,2,3,4,5,6,7,8,9,10]:
     setattr(ppeng, 'interpXZ'+repr(x), partial(interpXZ, x))
 ```
 
-Averaged contour plots for both the hub-height and the streamwise cases are also created and saved:  
+Averaged contour plots for both the hub-height and the streamwise cases are also created and saved:
+
 - [turbineHH_AVG_300_900.png](../results/images/turbineHH_AVG_300_900.png)
 - [turbineSW_AVG_300_900.png](../results/images/turbineSW_AVG_300_900.png)

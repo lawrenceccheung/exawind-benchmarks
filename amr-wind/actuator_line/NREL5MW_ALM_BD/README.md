@@ -4,7 +4,8 @@
 
 This benchmark problem describes the simulation of a single NREL5MW turbine using an actuator line model in a turbulent, slightly convective unstable atmospheric boundary layer.
 
-**Contents**  
+**Contents**
+
 - [Simulation description and setup](#simulation-description-and-setup)
 - [Postprocessing](#postprocessing)
 - [Code performance](#code-performance)
@@ -37,7 +38,8 @@ This atmospheric inflow for this case is generated via the [convectively unstabl
 
 Full details provided in [**performance documentation**](performance/README.md).
 
-The job was run on an HPC cluster using 8 nodes/896 CPU's and run for 23.3 hours wall-time:  
+The job was run on an HPC cluster using 8 nodes/896 CPU's and run for 23.3 hours wall-time:
+
 | Parameter       | Value |
 |---              |---  |
 | Number of nodes | 8   |

@@ -6,12 +6,15 @@ The results of the NREL5MW ALM simulation are shown here.  Many of the scripts a
 
 Instantaneous velocity contours of the domain and near the turbine are created using the [InstantaneousAvgPlanes](../postprocessing/InstantaneousAvgPlanes.ipynb) scripts.
 The horizontal velocity contours at the hub-height (z=90m) plane at 900 seconds after the start of the simulation are shown here:
+
 ![turbine domain](images/XYdomain_INST_15900.png)
 
 Similarly, the instantaneous horizontal velocity flow near the turbine (at the hub-height z=90m plane) at 900 seconds after the start of the simulation is depicted in the image below.  The turbine hub-height center sits at (x,y)=(0,0) in this coordinate system:
+
 ![instantaneous HH](images/turbineHH_INST_15900.png)
 
 The same image in streamwise plane gives a vew of the vertical structure in the wake.
+
 ![instantaneous SW](images/turbineSW_INST_15900.png)
 
 ## Turbine results
@@ -29,6 +32,7 @@ The time-history and time-averaged turbine performance is extracted and calculat
 -->
 
 The full time history of the turbine power, rotor thrust, rotor speed, blade pitch, and rotor torque are also shown here:
+
 ![](images/OpenFAST_T0_GenPwr.png)
 ![](images/OpenFAST_T0_RotThrust.png)
 ![](images/OpenFAST_T0_RotSpeed.png)
