@@ -7,16 +7,33 @@ The relevant code versions are
 - OpenFAST version: [Release 4.02](https://github.com/OpenFAST/openfast/releases/tag/v4.0.2)
 - ROSCO version: [2.9](https://github.com/NREL/ROSCO/releases/tag/v2.9.0)
 
-The job was run on an HPC cluster using 
-| Job type        | Characteristic |
+The job was run on the Sandia Flight HPC cluster using the following resources: 
+| Parameter       | Value |
 |---              |---  |
 | Number of nodes | 8   |
 | Number of CPUs  | 896 |
 | Wall-time       | 23.3 hours|
 | CPU-hours       | 20862     | 
 
+with the following machine specifications: 
+| Parameter           | Value |
+|---                  |---  |
+| CPU processor type  | Intel(R) Xeon(R) Platinum 8480+ |
+| CPU processor speed | 3800 Mhz |
+| Node interconnects  | Cornelis Omni-Path high-speed interconnect |
 
-Average time spent every iteration in
+The overall simulation parameters 
+
+| Parameter              | Value |
+|---                     |---    |
+| Total simulation time  | 1000 sec | 
+| Simulation timestep    | 0.0172 sec | 
+| Total mesh size        | 70,540,800 | 
+| Num mesh elements/rank | 78,729 |
+
+
+
+Average time spent every iteration in the following categories:  
 |Category| Time [s]|
 |---            | --- |
 |Pre-processing | 0.135061|

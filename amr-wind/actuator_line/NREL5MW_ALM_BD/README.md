@@ -38,7 +38,7 @@ This atmospheric inflow for this case is generated via the [convectively unstabl
 Full details provided in [**performance documentation**](performance/README.md).
 
 The job was run on an HPC cluster using 8 nodes/896 CPU's and run for 23.3 hours wall-time:  
-| Job type        | Characteristic |
+| Parameter       | Value |
 |---              |---  |
 | Number of nodes | 8   |
 | Number of CPUs  | 896 |
