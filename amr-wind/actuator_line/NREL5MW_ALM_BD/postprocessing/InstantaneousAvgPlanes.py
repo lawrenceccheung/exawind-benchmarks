@@ -131,7 +131,7 @@ instantaneousplanes:
       clevels: 'np.linspace(0, 14, 141)'
       xlabel: 'X/D'
       ylabel: 'Y/D'
-      figsize: [12,3]
+      figsize: [12,4]
       cbar_nticks: 15
       fontsize: 12   
       xscalefunc: 'lambda x: (x-126*4)/126.0'

@@ -144,7 +144,7 @@ In this section we provide some explanations and context for the turbine and mes
 
 ![](../results/images/NREL5MW_domain.png)
 
-The domain that is used in the NREL5MW case is the same as in the precursor ABL, namely one that has dimensions of 5120m x 5120m x 1920m.  The turbine base location is at (x,y) = (1800, 1800).  The background (level 0) grid uses a 10m resolution which is refined twice to reach 2.5m resolution at the rotor, for a total mesh size: 70.5M  Note that for the blade-resolved version of this run, two additional refinement zones are used, so the resolution at the rotor disk is 0.625m.
+The domain that is used in the NREL5MW case is the same as in the precursor ABL, namely one that has dimensions of 5120m x 5120m x 1920m.  The turbine base location is at (x,y) = (1800, 1800).  The background (level 0) grid uses a 10m resolution which is refined twice to reach 2.5m resolution at the rotor, for a total mesh size of approximately 70.5M.  Note that for the blade-resolved version of this run, two additional refinement zones are used, so the resolution at the rotor disk is 0.625m.
 
 |Level | grid size |
 | ---  | ---     |
@@ -232,7 +232,7 @@ In addition to the changes listed above, we also remove one of the blade station
 
 ### ALM settings
 
-When using the actuator line method in AMR-Wind, several additional parameters need to be set for this case.  The number of actuator line points along the length of the blade and tower needs to be set, as well as the magnitude of epislon, which sets the amount of smearing required for the applied force at each actuator force point.  These settings are defined in through these parameters in the AMR-Wind input file:
+When using the actuator line method in AMR-Wind, several additional parameters need to be set for this case.  The number of actuator line points along the length of the blade and tower needs to be set, as well as the magnitude of epsilon, which sets the amount of smearing required for the applied force at each actuator force point.  These settings are defined through these parameters in the AMR-Wind input file:
 
 ```
 Actuator.T0.num_points_blade             = 25                  
@@ -253,7 +253,7 @@ amrwindfedirs = ['/projects/wind_uq/lcheung/amrwind-frontend',
                 ]
 ```
 
-Secondly, the location of the precursor directory and the inputfile from the precursor run should be supplied in the `precursordir` and the `precursorsetup` directories, respectively.
+Secondly, the location of the precursor directory and the inputfile from the precursor run should be supplied in the `precursordir` directory and the `precursorsetup` input file, respectively.
 
 ```python
 # Location of precursor run with boundary data

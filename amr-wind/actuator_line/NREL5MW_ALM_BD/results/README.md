@@ -13,7 +13,7 @@ Similarly, the instantaneous horizontal velocity flow near the turbine (at the h
 
 ![instantaneous HH](images/turbineHH_INST_15900.png)
 
-The same image in streamwise plane gives a vew of the vertical structure in the wake.
+The same image in streamwise plane gives a view of the vertical structure in the wake.
 
 ![instantaneous SW](images/turbineSW_INST_15900.png)
 
@@ -41,7 +41,7 @@ The full time history of the turbine power, rotor thrust, rotor speed, blade pit
 
 ## Blade loading profiles
 
-The averaged blade loading profiles and aerodynamic properties as a function of the blade span are calculated in the [OpenFAST_SectionalLoading](../postprocessing/OpenFAST_SectionalLoading.ipynb) scripts.  These include the angle of attack (AOA), lift/drag (Cl/Cd), and streamwise/tangential force (Fx/Fy) loading profiles shown here:
+The averaged blade loading profiles and aerodynamic properties as a function of the blade span are calculated in the [OpenFAST_SectionalLoading](../postprocessing/OpenFAST_SectionalLoading.ipynb) scripts.  These include the angle of attack (AOA), inflow angle (Phi), lift/drag (Cl/Cd), and streamwise/tangential force (Fx/Fy) loading profiles shown here:
 
 ![](images/OpenFAST_T0_AOA.png)
 ![](images/OpenFAST_T0_ClCd.png)
@@ -55,7 +55,7 @@ The time averaged wake profiles are calculated in the [AVGPlanes](../postprocess
 ![avg HH](images/turbineHH_AVG_300_900.png)
 ![avg SW](images/turbineSW_AVG_300_900.png)
 
-Profiles of the wake velocity, normalized against $U_\infty$=11.4 m/s, are extracted from x/D = 1 to 10D: 
+Profiles of the wake velocity, normalized against $U_\infty$=11.4 m/s, are extracted from x/D = 1, 2, 3,...,9: 
 
 ![Hub-height XY wake profile](images/WakeProfile_XY_300_900.png)
 ![XZ wake profile](images/WakeProfile_XZ_300_900.png)

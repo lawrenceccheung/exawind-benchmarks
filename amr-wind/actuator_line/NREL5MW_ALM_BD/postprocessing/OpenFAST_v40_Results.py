@@ -143,7 +143,7 @@ plotcsv:
 
   - name: RotTorque
     xlabel: 'Time [s]'
-    ylabel: 'Torque'
+    ylabel: 'Torque [kN-m]'
     title: 'Rotor Torque'
     figsize: [10,4]
     legendopts: {'loc':'upper right'}
