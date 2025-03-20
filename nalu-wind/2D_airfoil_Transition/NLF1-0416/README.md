@@ -8,8 +8,8 @@ Validation and verification of the transition model were conducted for the NASA 
 
 - Test airfoil: NASA NLF(1)-0416 airfoil with a thickness of 16%
 - Flow Condition: M=0.1, Re=4million, Tu=0.15%
-   - U<sub>∞</sub>=34.1m/s, ρ=1.225kg/m<sup>3</sup>, µ<sub>t</sub>/µ=1
-   - k<sub>∞</sub>=0.00392448375, ω<sub>∞</sub>=460.35
+   - $U_\infty$=34.1m/s, $\rho$=1.225kg/m<sup>3</sup>, $\mu_t/\mu$=1
+   - $k_\infty$=0.00392448375, $\omega_\infty$=460.35
 - CFD meshes with six different resoltuions provided by AIAA CFD Transition Modeling DG[^1]
    - 2-D structured C-type meshes: Tiny, Coarse, Medium, Fine, Extra, Ultra resolutions[^4]
 - Turbulence / Transition model: SST-2003 with the 1-eq Gamma transition model
@@ -19,7 +19,8 @@ Validation and verification of the transition model were conducted for the NASA 
 ## Results: Grid Sensitivity Study
 
 ### Lift and drag coefficients at AoA=5°
-<img src="aoa_5/figures_and_scripts/nlf0416_cl_cd.png" alt="Cf" width="1000">
+<!-- <img src="aoa_5/figures_and_scripts/nlf0416_cl_cd.png" alt="Cf" width="1000"> -->
+![Cf](aoa_5/figures_and_scripts/nlf0416_cl_cd.png)
 
 Two different options for the freestream conditions are tested here: 
 1) Local turbulence intensity with the sustaining terms (green line): same way as the OVERFLOW and FUN3D simulations
@@ -27,14 +28,14 @@ Two different options for the freestream conditions are tested here:
 
 The grid sensitivitiy results are presented for the lift and drag coefficient. In the above figure, the x axis, h, is the 1/sqrt(total number of nodes), meaning smaller values correspond to finer grids. With the Option 1, Nalu-Wind results show similar trends to the FUN3D results. It is also seen that to achieve  the grid-converged trends, at least the third finest mesh resolution, ("Fine") is required. Overall, both Nalu-Wind and FUN3D show more mesh-dependence than OVERFLOW. This is attributed to the numerical shcemes of the unstructred flow solvers, which have lower order of accuracy in space compared to structured flow solvers.
 
-There are two ways for the Option 1: specifying k and ω accounting for the decay from the far-field to the leading edge or using the sustaning terms. In the current work, due to a very large size of the outer boundary from the far-field to the wall (1,000 chord lengths), the sustaning terms are applied, which is the same way as the OVERFLOW and FUN3D simulations. In a Nalu-Wind input, the sustaning terms, sdr_amb and tke_amb, can be specified as below
+There are two ways for the Option 1: specifying k and $\omega$ accounting for the decay from the far-field to the leading edge or using the sustaning terms. In the current work, due to a very large size of the outer boundary from the far-field to the wall (1,000 chord lengths), the sustaning terms are applied, which is the same way as the OVERFLOW and FUN3D simulations. In a Nalu-Wind input, the sustaning terms, sdr_amb and tke_amb, can be specified as below
  
     - turbulence_model_constants:
         - fsti: 0
         - sdr_amb: 460.34999999999997
         - tke_amb: 0.00392448375
 
-If the freestream k and ω account for the decay, the sustaining terms should be zero.
+If the freestream k and $\omega$ account for the decay, the sustaining terms should be zero.
 
 Option 2, which applies a constant turbulence intensity, improves grid convergence of the lift and drag, particularly at low mesh resolutions. For more consistent and accurate predictions, Option 2 is recommended, which can be speficied in a Nalu-Wind input as follows:
 
@@ -48,7 +49,8 @@ Option 2 is activated only if fsti is explicitly specified in the Nalu-Wind inpu
 ## Results: Angle of Attack Sweep
 
 ### Comparison of the lift and drag coefficient
-<img src="figures_and_scripts/nlf0416_clcd.png" alt="Cf" width="1000">
+<!-- <img src="figures_and_scripts/nlf0416_clcd.png" alt="Cf" width="1000"> -->
+![Cf](figures_and_scripts/nlf0416_clcd.png)
 
 Based on the grid sensitivity results, a full sweep of angles of attack was performed using the Fine mesh level. The two figures above compare the lift and drag polar with the experimental measurements[^5]. For the lift, the transition simulation slightly over-predicts the lift coefficient in the linear range of the lift curve, a similar behavior also observed in transition predictions using other transition models and other flow solvers. For the drag polar, the transition simulation predicts lower drag across the range of angles of attack than the fully turbulent simulation and better compares with the experimental data. 
 Specifically, the errors in the predicted drag coefficient at AoA=5° are 2.87% for the transition simulation and 57.56% for the fully turbulent simualtion.
@@ -56,17 +58,22 @@ Specifically, the errors in the predicted drag coefficient at AoA=5° are 2.87% 
 ## Results: Convergence
 
 ### Time history of the residuals and aerodynamic coefficients
-<img src="aoa_5/figures_and_scripts/time_history.png" alt="Cf" width="1000">
+<!-- <img src="aoa_5/figures_and_scripts/time_history.png" alt="Cf" width="1000"> -->
+![Cf](aoa_5/figures_and_scripts/time_history.png)
 
-Convergence behaviors of the transition simulation are presented in the above figure at AoA=5°. Left figure shows the time history of the non-linear residuals from Nalu-Wind for the mean flow (momentum), turbulence model (𝑘), and transition model (𝛾) at the last Picard iteration of each main iteration. In the figure, all residuals decline smoothly by 3.5 to 4 orders of magnitude until they finally stall. Similary, both the lift and drag converge well without oscillations, with less than 0.1% difference from the converged value around iteration 4,000.
+Convergence behaviors of the transition simulation are presented in the above figure at AoA=5°. Left figure shows the time history of the non-linear residuals from Nalu-Wind for the mean flow (momentum), turbulence model ($k$), and transition model ($\gamma$) at the last Picard iteration of each main iteration. In the figure, all residuals decline smoothly by 3.5 to 4 orders of magnitude until they finally stall. Similary, both the lift and drag converge well without oscillations, with less than 0.1% difference from the converged value around iteration 4,000.
 
 Each case with the "Fine" mesh took approximately 40 minutes to 10,000 iterations, using 4 Picard iterations per time step, on 26 cores of NREL's Kestrel HPC cluster. The number of cores per case was not determined by Nalu-Wind’s scalability on Kestrel, but simply to accommodate 4 cases on a single node of Kestrel.
 
 ## References
-[^1]: https://transitionmodeling.larc.nasa.gov/
-[^2]: Venkatachari, B. S., et al., "Implementation and Assessment of Menter’s Galilean-Invariant 𝛾
-Transition Model in OVERFLOW," AIAA AVIATION 2023 Forum, 2023. https://doi.org/10.2514/6.2023-3533
-[^3]: Hildebrand, N., et al., "Implementation and Verification of the SST-𝛾 and SA-AFT
-Transition Models in FUN3D," AIAA AVIATION 2023 Forum, 2023. https://doi.org/10.2514/6.2023-3530.
-[^4]: Coder, J., "Standard Test Cases for Transition Model Verification and Validationin Computational Fluid Dynamics," 56th AIAA Aerospace Sciences Meeting, January, 2018. https://doi.org/https://doi.org/10.2514/6.2018-0029.
-[^5]: Somers, D. M., "Design and Experimental Results for a Natural-Laminar-Flow Airfoil for General Aviation Applications," NASA Technical Paper 1861, 1981.
+[1]: [https://transitionmodeling.larc.nasa.gov/](https://transitionmodeling.larc.nasa.gov/)
+
+[2]: Venkatachari, B. S., et al., "Implementation and Assessment of Menter’s Galilean-Invariant $\gamma$
+Transition Model in OVERFLOW," AIAA AVIATION 2023 Forum, 2023. [https://doi.org/10.2514/6.2023-3533](https://doi.org/10.2514/6.2023-3533)
+
+[3]: Hildebrand, N., et al., "Implementation and Verification of the SST-$\gamma$ and SA-AFT
+Transition Models in FUN3D," AIAA AVIATION 2023 Forum, 2023. [https://doi.org/10.2514/6.2023-3530](https://doi.org/10.2514/6.2023-3530).
+
+[4]: Coder, J., "Standard Test Cases for Transition Model Verification and Validationin Computational Fluid Dynamics," 56th AIAA Aerospace Sciences Meeting, January, 2018. [https://doi.org/https://doi.org/10.2514/6.2018-0029](https://doi.org/https://doi.org/10.2514/6.2018-0029).
+
+[5]: Somers, D. M., "Design and Experimental Results for a Natural-Laminar-Flow Airfoil for General Aviation Applications," NASA Technical Paper 1861, 1981.
