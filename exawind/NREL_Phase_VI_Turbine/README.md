@@ -11,6 +11,7 @@ ExaWind simulations are performed for NREL’s Unsteady Aerodynamics Experiment 
 - Pitch and twist axis at 0.3c
 
 ## Simulation Setup
+
 - ExaWind driver version: [a38a4d5f96e4d3b42b52f41280e2d8d28c57ef25]( https://github.com/Exawind/exawind-driver/commit/a38a4d5f96e4d3b42b52f41280e2d8d28c57ef25)
 - Nalu-Wind version: [f3cecafbdc05e61d0550ff41a30307425ef8197b](https://github.com/Exawind/nalu-wind/commit/f3cecafbdc05e61d0550ff41a30307425ef8197b)
    - Turbulence / Transition model: SST-2003 with the 1-eq Gamma transition model
@@ -20,18 +21,19 @@ ExaWind simulations are performed for NREL’s Unsteady Aerodynamics Experiment 
 ## Freestream conditions
 Simulations are performed for both fully turbulent and laminar-turbulent transition conditions at two wind speeds: 7 m/s and 15 m/s, which represent speeds below and above the rated wind speed, respectively.
 
-The tunnel’s turbulence intensity was reported to be below 0.5%, but the precise measurement was unavailable during the experiments. In this work, a turbulence intensity of 0.1% was assumed, which is typical for wind tunnels. The freestream conditions for the k and ω account for the decay of turbulent variables from the inlet to the rotor, with the inlet set 100m upstream of the rotor. The conditions are as follows:
+The tunnel’s turbulence intensity was reported to be below 0.5%, but the precise measurement was unavailable during the experiments. In this work, a turbulence intensity of 0.1% was assumed, which is typical for wind tunnels. The freestream conditions for the k and $\omega$ account for the decay of turbulent variables from the inlet to the rotor, with the inlet set 100m upstream of the rotor. The conditions are as follows:
 
 - Inflow conditions at 7 m/s
-    - U<sub>∞</sub>=7.0 m/s, ρ=1.246 kg/m<sup>3</sup>, µ<sub>t</sub>/µ=4.5
-    - k<sub>∞</sub>= 0.007350, ω<sub>∞</sub>= 115.044281
+    - $U_\infty$=7.0 m/s, $\rho$=1.246 kg/m<sup>3</sup>, $\mu_t/\mu$=4.5
+    - $k_\infty$= 0.007350, $\omega_\infty$= 115.044281
 
 - Inflow conditions at 15 m/s
-    - U<sub>∞</sub>=15.0 m/s, ρ=1.246 kg/m<sup>3</sup>, µ<sub>t</sub>/µ=9.7
-    - k<sub>∞</sub>=0.033750, ω<sub>∞</sub>=245.071186
+    - $U_\infty$=15.0 m/s, $\rho$=1.246 kg/m<sup>3</sup>, $\mu_t/\mu$=9.7
+    - $k_\infty$=0.033750, $\omega_\infty$=245.071186
 
 ## CFD mesh generation
 The near-body (Nalu-Wind) mesh was created using Pointwise from the CAD model. The two blades are connected with a cylinder at the center, while other components such as the spinner or tower were not included in the CFD mesh.
+
 - Mesh topology: O-O typed structured mesh
 - 500 points in the chordwise direction
 - Initial wall normal spacing: 5e-6m
@@ -40,6 +42,7 @@ The near-body (Nalu-Wind) mesh was created using Pointwise from the CAD model. T
 - Total cell counts: 23,192,978
 
 Off-body (AMR-Wind) mesh was generated using the built-in capability of AMR-Wind. Off-body mesh information is summarized below 
+
 - Mesh topology: Cartesian with AMR
 - Domain in x= -100 to 150m, y=-100m to 100m, z=-100m to 100m
 - Initial grid size: 0.78125m
@@ -49,6 +52,7 @@ Off-body (AMR-Wind) mesh was generated using the built-in capability of AMR-Wind
 
 ## Results
 The rotor simulations are performed in four sequential stages with reduced time step sizes as follows:
+
 - Rev. 1 and 2: 0.25°
 - Rev. 3 and 4: 0.125°
 - Rev. 5 and 6: 0.0625°
