@@ -47,20 +47,20 @@ Off-body (AMR-Wind) mesh was generated using the built-in capability of AMR-Wind
 - Domain in x= -100 to 150m, y=-100m to 100m, z=-100m to 100m
 - Initial grid size: 0.78125m
 - Finest cell size: 0.1953 m with 4 AMR levels
-   - See detail ranges of the mesh refinement in “static_box.txt”
+   - See detail ranges of the mesh refinement in [static_box.txt](RANS/u_7/input_files/static_box.txt)
 - Total cell counts: 45,527,040
 
 ## Results
-The rotor simulations are performed in four sequential stages with reduced time step sizes as follows:
+The rotor simulations are performed in four sequential stages with reduced time step sizes, so that rotor revolution per iteration decreased as follows:
 
-- Rev. 1 and 2: 0.25°
-- Rev. 3 and 4: 0.125°
-- Rev. 5 and 6: 0.0625°
-- Rev. 7 and 8: 0.03125°
+- Rev. 1 and 2: 0.25° per iteration
+- Rev. 3 and 4: 0.125° per iteration
+- Rev. 5 and 6: 0.0625° per iteration
+- Rev. 7 and 8: 0.03125° per iteration
 
 This approach was particularly important for the wind speed of 15 m/s to acheive the time-step size conevergence, which exhibits highly separated flow, with the sectional angle of attack distribution ranging between 15° and 35°.
 
-The figure below compares the rotor performance (thrust and torque) against experimental data and available other numerical results [2]. For the Nalu-Wind results, the rotor performance was averaged over the last one revolution.
+The figure below compares the rotor performance (thrust and torque) against experimental data and available other numerical results [2]. The experimental error is indicated by the black uncertainty bar at the top of each `Experiment` column. For the Nalu-Wind results, the rotor performance was averaged over the last one revolution.
 
 ![Cf](figures_and_scripts/PhaseVi.png)
 
@@ -72,4 +72,4 @@ The simulations were performed using 1,440 cores on NREL's Kestrel HPC cluster: 
 
 [1]: M. H. Hand et al, "Unsteady Aerodynamics Experiment Phase VI: Wind Tunnel Test Configurations and Available Data Campaigns," NREL/TP-500-29955, 2001.
 
-[2]: Sørensen, "CFD Modelling of Laminar-turbulent Transition for Airfoils and Rotors Using the Gamm-Re Model," Wind Energ. 12:715–733, 2009.
+[2]: Sørensen, "CFD Modelling of Laminar-turbulent Transition for Airfoils and Rotors Using the Gamma-Re Model," Wind Energ. 12:715–733, 2009.
