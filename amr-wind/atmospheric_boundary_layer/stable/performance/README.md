@@ -4,3 +4,5 @@ This input file was used to run the stable case that will appear in the AMR-Wind
 Time spent in InitData():    9.398286066
 Time spent in Evolve():      225.6947159
 ```
+
+leading to an average wall-clock time per time step of 2.26s.
