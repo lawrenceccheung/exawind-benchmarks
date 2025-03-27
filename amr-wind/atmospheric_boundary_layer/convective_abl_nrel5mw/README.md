@@ -109,7 +109,8 @@ if postproamrwinddir not in sys.path:
 
 ### Metmast Profiles
 
-Averaged wind profiles from a virtual metmast at the turbine location are computed in the [AVG_metmast.ipynb](postprocessing/AVG_metmast.ipynb) Jupyter notebook and are shown below. 
+Averaged wind profiles from a virtual metmast at the turbine location are computed in the [AVG_metmast.ipynb](postprocessing/AVG_metmast.ipynb) Jupyter notebook and are shown below.
+
 ![Met mast average](results/avgmetmast_0600.png)
 
 **Note**: The path to the [AMR-Wind front end](https://github.com/Exawind/amr-wind-frontend) library must be provided in the [ABL_metmast.ipynb](postprocessing/ABL_metmast.ipynb) Jupyter notebook.  If necessary, download the library and edit the lines which define `amrwindfedirs` to include any locations of that library, e.g.,
