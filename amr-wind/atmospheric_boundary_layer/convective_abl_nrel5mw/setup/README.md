@@ -70,6 +70,8 @@ If you're interested in modifying the AMR-Wind input file, for instance, to chan
 
 ![ABL domain side view](../results/images/convectiveABL_sideview.png)
 
+In the image above, a side view of the domain is shown, with the potential location of an NREL5MW turbine shown in the black disk.  Sampling planes are placed at the heights z=27, 90, and 153m to calculate statistics, along with a virtual met-mast and inflow planes to characterize the inflow wind statistics to the turbine.
+
 There are a few modifications required to execute the notebook.  First, the location of the AMR-Wind front end directory (and the utilities subdirectory) should be provided in the `amrwindfedirs` list here: 
 
 ```python
