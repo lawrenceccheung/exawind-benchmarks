@@ -157,8 +157,8 @@ The streamwise, lateral, and vertical temporal spectra sampled from XY planes at
 
 The longitudinal and latitudinal integral length scales are computed in the [ABL_integral_lengthscale.ipynb](postprocessing/ABL_integral_lengthscale.ipynb) notebook, resulting in 
 
-- Longitudinal length scale >= 609.21 m 
-- Latitudinal length scale  = 95.29 m
+- Longitudinal length scale = 539.61 m 
+- Latitudinal length scale  = 97.13 m
 
 The computation of the integral length scale relies on the [AMR-Wind front end](https://github.com/Exawind/amr-wind-frontend) library to compute the two-point correlation. 
 
