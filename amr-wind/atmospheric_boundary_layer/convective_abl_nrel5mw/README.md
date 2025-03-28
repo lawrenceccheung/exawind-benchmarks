@@ -25,7 +25,7 @@ benchmark cases. The conditions and details of the case are summarized below:
 
 Full details of the simulation setup are provided in [**setup documentation**](setup/README.md).
 
-The case was set up using the [AMR-Wind frontend](https://github.com/Exawind/amr-wind-frontend) with the notebook [convectiveABL_setup.ipynb](convective_abl_nrel5mw/setup/convectiveABL_setup.ipynb).  This allows the locations of the refinement regions and sampling planes to be setup properly relative to the location of the NREL5MW turbine.
+The case was set up using the [AMR-Wind frontend](https://github.com/Exawind/amr-wind-frontend) with the notebook [convectiveABL_setup.ipynb](setup/convectiveABL_setup.ipynb).  This allows the locations of the refinement regions and sampling planes to be setup properly relative to the location of the NREL5MW turbine.
 
 Input files are in the [input_files](input_files) directory.  There are two stages to this run:
 
@@ -73,7 +73,7 @@ The veer and shear exponent over the rotor disk are 0.0015 deg/m and 0.0944, res
 
 ### Flow Visualizations
 
-An instantaneous hub-height visualization of the horizontal velocity at $t=15,000$s is included below. 
+An instantaneous hub-height visualization of the horizontal velocity at $t=15,000s$ is included below. 
 ![HH WS contour](results/XYdomain_15000.png)
 
 ### Horizontal Profiles
@@ -113,7 +113,7 @@ Averaged wind profiles from a virtual metmast at the turbine location are comput
 
 ![Met mast average](results/avgmetmast_0600.png)
 
-**Note**: The path to the [AMR-Wind front end](https://github.com/Exawind/amr-wind-frontend) library must be provided in the [ABL_metmast.ipynb](postprocessing/ABL_metmast.ipynb) Jupyter notebook.  If necessary, download the library and edit the lines which define `amrwindfedirs` to include any locations of that library, e.g.,
+**Note**: The path to the [AMR-Wind front end](https://github.com/Exawind/amr-wind-frontend) library must be provided in the [AVG_metmast.ipynb](postprocessing/AVG_metmast.ipynb) Jupyter notebook.  If necessary, download the library and edit the lines which define `amrwindfedirs` to include any locations of that library, e.g.,
 ```python
 # Add any possible locations of amr-wind-frontend here
 amrwindfedirs = ['/projects/wind_uq/lcheung/amrwind-frontend/',
@@ -129,7 +129,7 @@ Two-dimensional (2D) wavenumber spectra are computed from the XY planes sampled 
 python ppengine.py postpro_windspectra.yaml
 ```
 Details of the 2D wavenumber computation can be found in the [documentation](https://github.com/Exawind/amr-wind-frontend/tree/main/postproengine/doc) for the post-processing engine.
-The [ABL_wavenumber_spectra.ipynb](postprocessing/ABL_wavenumber_spectra.ipynb) Jupyter notebook plots the energy, horizontal, and vertical 2D wavenumber spectra and are reported below at the bottom-tip and hub-height locations of the NREL5MW: 
+The [ABL_wavenumber_spectra.ipynb](postprocessing/ABL_wavenumber_spectra.ipynb) Jupyter notebook plots the energy, horizontal, and vertical 2D wavenumber spectra, which are reported below at the bottom-tip and hub-height locations of the NREL5MW: 
 
 ![wavenumber_spectra](postprocessing/figures/ABL_wavenumber_spectra.png)
 
