@@ -110,7 +110,7 @@ Two-dimensional (2D) wavenumber spectra are computed from the XY planes sampled 
 ```
 python ppengine.py postpro_windspectra_CGrid.yaml
 ```
-Details of the 2D wavenumber computation can be found in the [documentation](edit) for the post-processing engine.
+Details of the 2D wavenumber computation can be found in the [documentation](https://github.com/Exawind/amr-wind-frontend/tree/main/postproengine/doc) for the post-processing engine.
 The [ABL_wavenumber_spectra.ipynb](postprocessing/ABL_wavenumber_spectra.ipynb) Jupyter notebook plots the energy, horizontal, and vertical 2D wavenumber spectra and are reported below at three different vertical locations in the domain. 
 
 
