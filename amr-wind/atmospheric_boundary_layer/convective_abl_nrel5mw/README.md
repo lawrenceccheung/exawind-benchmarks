@@ -124,7 +124,7 @@ for x in amrwindfedirs: sys.path.insert(1, x)
 
 ### Wavenumber Spectra
 
-Two-dimensional (2D) wavenumber spectra are computed from the XY planes sampled from AMR-Wind using the [post-processing engine](https://github.com/Exawind/amr-wind-frontend/tree/main/postproengine) in the the [AMR-Wind front end](https://github.com/Exawind/amr-wind-frontend) library. The [yaml file](/postprocessing/postpro_windspectra.yaml) for computing 2D wavenumber spectra of vertical planes sampled in this benchmark case can be called using the [ppengine.py](https://github.com/Exawind/amr-wind-frontend/blob/main/utilities/ppengine.py) utility as
+Two-dimensional (2D) wavenumber spectra are computed from the XY planes sampled from AMR-Wind using the [post-processing engine](https://github.com/Exawind/amr-wind-frontend/tree/main/postproengine) in the the [AMR-Wind front end](https://github.com/Exawind/amr-wind-frontend) library. The [yaml file](postprocessing/postpro_windspectra.yaml) for computing 2D wavenumber spectra of vertical planes sampled in this benchmark case can be called using the [ppengine.py](https://github.com/Exawind/amr-wind-frontend/blob/main/utilities/ppengine.py) utility as
 ```
 python ppengine.py postpro_windspectra.yaml
 ```
