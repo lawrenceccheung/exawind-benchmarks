@@ -4,7 +4,6 @@
 .. toctree::
    :maxdepth: 2
 
-   info
 
 
 ExaWind
@@ -34,3 +33,4 @@ Nalu-Wind
 
    nalu-wind/benchmarks
 
+   info

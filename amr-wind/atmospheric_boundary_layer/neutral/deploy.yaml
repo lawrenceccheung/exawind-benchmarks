@@ -2,7 +2,8 @@
 # Location where files should exist
 destdir: ../../../.website_src/amr-wind/atmospheric_boundary_layer/neutral/
 
-validtypes: ['.html', '.md', '.ipynb']
+# Define the valid file types to copy over (optional)
+validtypes: ['.html', '.md', '.ipynb', '.png', '.jpg', '.rst', ] 
 
 # Markdown files to parse and copy files
 mdfiles:
