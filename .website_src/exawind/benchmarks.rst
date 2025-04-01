@@ -1,4 +1,4 @@
-Benchmark problems using hybrid overset solver (ExaWind)
+ExaWind Hybrid Solver Benchmarks
 ========================================================
 
 .. toctree::
@@ -6,3 +6,4 @@ Benchmark problems using hybrid overset solver (ExaWind)
 
    nrel_phase_vi
    nrel_5mw
+   pazywing

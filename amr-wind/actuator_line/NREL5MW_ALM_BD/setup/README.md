@@ -142,7 +142,7 @@ In this section we provide some explanations and context for the turbine and mes
 
 ### Mesh and domain
 
-![](../results/images/NREL5MW_domain.png)
+![domain](../results/images/NREL5MW_domain.png)
 
 The domain that is used in the NREL5MW case is the same as in the precursor ABL, namely one that has dimensions of 5120m x 5120m x 1920m.  The turbine base location is at (x,y) = (1800, 1800).  The background (level 0) grid uses a 10m resolution which is refined twice to reach 2.5m resolution at the rotor, for a total mesh size of approximately 70.5M.  Note that for the blade-resolved version of this run, two additional refinement zones are used, so the resolution at the rotor disk is 0.625m.
 

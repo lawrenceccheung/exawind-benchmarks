@@ -1,0 +1,11 @@
+
+# Location where files should exist
+destdir: ../../../.website_src/amr-wind/atmospheric_boundary_layer/neutral/
+
+validtypes: ['.html', '.md', '.ipynb']
+
+# Markdown files to parse and copy files
+mdfiles:
+  - README.md
+  - performance/README.md
+  - input_files/README.md

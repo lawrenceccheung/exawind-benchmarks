@@ -1,7 +1,8 @@
-Benchmark problems using AMR-Wind
+AMR-Wind Benchmarks
 =================================
 
 .. toctree::
    :maxdepth: 2
 
    abl
+   actuatorturbine

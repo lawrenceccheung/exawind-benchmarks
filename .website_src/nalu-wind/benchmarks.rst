@@ -1,4 +1,4 @@
-Benchmark problems using Nalu-Wind
+Nalu-Wind Benchmarks
 ==================================
 
 .. toctree::
