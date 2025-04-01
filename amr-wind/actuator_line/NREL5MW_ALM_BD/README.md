@@ -31,7 +31,7 @@ An OpenFAST turbine model is used to represent the aerodynamic, structural, and 
 
 ![domain](results/images/NREL5MW_domain.png)
 
-This atmospheric inflow for this case is generated via the [convectively unstable](../../atmospheric_boundary_layer/convective_abl_nrel5mw/) benchmark case.
+This atmospheric inflow for this case is generated via the [convectively unstable](../../atmospheric_boundary_layer/convective_abl_nrel5mw/README.md) benchmark case.
 
 
 ## Code performance
