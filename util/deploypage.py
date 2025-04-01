@@ -83,7 +83,7 @@ def getyamlnode(ydict, key, required=False, default=None):
         return default
     
 
-def process_yamlfile(yamlfile, dryrun=False, verbose=False):
+def process_yamlfile(yamlfile, dryrun=False, verbose=False, debug=False):
     """
     """
     with open(yamlfile, 'r') as f:
@@ -120,9 +120,9 @@ def process_yamlfile(yamlfile, dryrun=False, verbose=False):
                                  os.path.isdir(abslink),      # Check if the link is a directory
                                  not is_valid_filetype(link, validtypes)  # Check if the file has the right extension
                                  ]
-                    
+
+                    if debug: print('%-40s '%link+'\t'+repr(checklist))
                     if not any(checklist):
-                        #print('%-40s '%link+'\t'+repr(checklist))
                         # Copy the file
                         copytodir=os.path.join(destdir, basedir, os.path.dirname(link))
                         print(abslink+" --> "+copytodir)
@@ -182,6 +182,11 @@ mdfiles:
                         default=False,
                         action='store_true',
                         required=False)
+    parser.add_argument('--debug', 
+                        help="Print out debug information",
+                        default=False,
+                        action='store_true',
+                        required=False)
     parser.add_argument("--extrapaths",
                         nargs='+',
                         type=str,
@@ -200,6 +205,7 @@ mdfiles:
     example   = args.example
     dryrun    = args.dryrun
     verbose   = args.verbose
+    debug     = args.debug
     extrapaths= args.extrapaths
     
     if example:
@@ -214,7 +220,7 @@ mdfiles:
     yamldict = {}
     for yamlfile in inputfile:
         if os.path.exists(yamlfile):
-            process_yamlfile(yamlfile, dryrun=dryrun, verbose=verbose)
+            process_yamlfile(yamlfile, dryrun=dryrun, verbose=verbose, debug=debug)
         else:
             print('%s not found'%yamlfile)
 
