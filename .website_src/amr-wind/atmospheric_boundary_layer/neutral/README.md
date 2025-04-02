@@ -106,7 +106,7 @@ if postproamrwinddir not in sys.path:
 
 ### Wavenumber Spectra
 
-Two-dimensional (2D) wavenumber spectra are computed from the XY planes sampled from AMR-Wind using the [post-processing engine](https://github.com/Exawind/amr-wind-frontend/tree/main/postproengine) in the the [AMR-Wind front end](https://github.com/Exawind/amr-wind-frontend) library. The [yaml file](/postprocessing/postpro_windspectra_CGrid.yaml) for computing 2D wavenumber spectra of vertical planes sampled in this benchmark case can be called using the [ppengine.py](https://github.com/Exawind/amr-wind-frontend/blob/main/utilities/ppengine.py) utility as
+Two-dimensional (2D) wavenumber spectra are computed from the XY planes sampled from AMR-Wind using the [post-processing engine](https://github.com/Exawind/amr-wind-frontend/tree/main/postproengine) in the the [AMR-Wind front end](https://github.com/Exawind/amr-wind-frontend) library. The [yaml file](https://github.com/Exawind/exawind-benchmarks/tree/main/amr-wind/atmospheric_boundary_layer/neutral/postprocessing/postpro_windspectra_CGrid.yaml) for computing 2D wavenumber spectra of vertical planes sampled in this benchmark case can be called using the [ppengine.py](https://github.com/Exawind/amr-wind-frontend/blob/main/utilities/ppengine.py) utility as
 ```
 python ppengine.py postpro_windspectra_CGrid.yaml
 ```
@@ -119,7 +119,7 @@ The [ABL_wavenumber_spectra.ipynb](postprocessing/ABL_wavenumber_spectra.ipynb) 
 ### Temporal Spectra
 
 Temporal spectra are computed from the XY planes sampled from AMR-Wind using the [post-processing engine](https://github.com/Exawind/amr-wind-frontend/tree/main/postproengine) in the [AMR-Wind front end](https://github.com/Exawind/amr-wind-frontend) library. The [ABL_temporal_spectra.ipynb](postprocessing/ABL_temporal_spectra.ipynb) jupyter notebook can be used to compute the temporal spectra and to plot the results against a Kaimal spectra. 
-Details of the temporal spectra computation can be found in the [documentation](edit) for the post-processing engine. 
+Details of the temporal spectra computation can be found in the [documentation](https://github.com/Exawind/amr-wind-frontend/tree/main/postproengine) for the post-processing engine. 
 
 **Note**: The path to the [AMR-Wind front end](https://github.com/Exawind/amr-wind-frontend) library must be provided in the [ABL_temporal_spectra.ipynb](postprocessing/ABL_temporal_spectra.ipynb) jupyter notebook.  If necessary, download the library and edit the lines which define `amrwindfedirs` to include any locations of that library, e.g.,
 ```python
