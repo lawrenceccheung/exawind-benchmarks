@@ -81,11 +81,29 @@ def getyamlnode(ydict, key, required=False, default=None):
         sys.exit(1)
     else:
         return default
-    
+
+def writeorphanfile(filename, orphanlist):
+    """
+    Write the list of orphan files to filename
+    """
+    header=""":orphan:
+
+.. toctree::
+   :hidden:
+
+"""
+    with open(filename, 'w') as f:
+        f.write(header)
+        for orphan in orphanlist:
+            f.write('   '+orphan+'\n')
+        f.write('\n')
+    return
 
 def process_yamlfile(yamlfile, dryrun=False, verbose=False, debug=False):
     """
     """
+    getext = lambda fname: os.path.splitext(fname)[1]
+    
     with open(yamlfile, 'r') as f:
         yamldict = Loader(f, **loaderkwargs)
 
@@ -93,12 +111,25 @@ def process_yamlfile(yamlfile, dryrun=False, verbose=False, debug=False):
         mdfiles    = getyamlnode(yamldict, 'mdfiles', required=True)
         validtypes = getyamlnode(yamldict, 'validtypes', required=False,
                                  default=validexts)
+
+        # Take care of the orphan file list
+        buildorphan = getyamlnode(yamldict, 'buildorphanlist', required=False,
+                                  default=True)
+        orphantypes = getyamlnode(yamldict, 'orphantypes', required=False,
+                                  default=['.md', '.ipynb'])
+        orphanfname = getyamlnode(yamldict, 'orphanfname', required=False,
+                                  default='orphan.rst')
+
+        orphanlist = []
         
         for mdf in mdfiles:
             basedir   = os.path.dirname(mdf)
             # Copy the first markdown
             copytodir=os.path.join(destdir, basedir)
             print(mdf+" --> "+copytodir)
+            if getext(mdf).lower() in orphantypes:
+                orphanlist.append(mdf)
+                
             if not os.path.exists(copytodir):
                 # Create the directory
                 os.makedirs(copytodir)
@@ -122,6 +153,11 @@ def process_yamlfile(yamlfile, dryrun=False, verbose=False, debug=False):
                                  ]
 
                     if debug: print('%-40s '%link+'\t'+repr(checklist))
+                    if (os.path.exists(abslink) and
+                        (not os.path.isdir(abslink)) and
+                        (getext(abslink).lower() in orphantypes)):
+                        orphanlist.append(abslink)
+                        
                     if not any(checklist):
                         # Copy the file
                         copytodir=os.path.join(destdir, basedir, os.path.dirname(link))
@@ -138,7 +174,14 @@ def process_yamlfile(yamlfile, dryrun=False, verbose=False, debug=False):
                         if os.path.isdir(abslink):
                             print("WARNING: "+abslink + " is a directory")
             print()
-            
+        orphanlist = [os.path.relpath(x) for x in orphanlist]
+        orphanlist = list(set(orphanlist))
+        orphanfile = os.path.join(destdir, orphanfname)
+        if verbose:
+            print('ORPHANFILE: '+orphanfile)
+            print('ORPHANLIST: '+repr(orphanlist))
+        if not dryrun:
+            writeorphanfile(orphanfile, orphanlist)
     return
 
 # ========================================================================
