@@ -16,9 +16,6 @@ Atmospheric boundary layer (ABL)
   * `Performance <atmospheric_boundary_layer/convective_abl_nrel5mw/performance/README.html>`__
   * `Results <atmospheric_boundary_layer/convective_abl_nrel5mw/README.html#results>`__
 
-`Go to cases in repository
+`View these cases in the github repository
 <https://github.com/Exawind/exawind-benchmarks/tree/main/amr-wind/atmospheric_boundary_layer>`__
 
-The neutral ABL case was run until statistical convergence, whereas the other cases
-where run for only 100 steps to record computational performance. The plots from the neutral ABL case are
-provided :download:`here <abl_neutral.pdf>`.
