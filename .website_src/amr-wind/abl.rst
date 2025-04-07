@@ -11,13 +11,13 @@ Atmospheric boundary layer (ABL)
 	    
 Two different atmospheric boundary simulations are documented here:
 
-#. `Neutral ABL <atmospheric_boundary_layer/neutral/README.html>`__: Simulations of the geostrophically forced ABL from Berg et (2020).
+#. `Neutral ABL <atmospheric_boundary_layer/neutral/README.html>`__: Simulations of the geostrophically forced neutral ABL from Berg et (2020).
 
    * `Setup <atmospheric_boundary_layer/neutral/input_files/README.html>`__
    * `Performance <atmospheric_boundary_layer/neutral/performance/README.html>`__
    * `Results <atmospheric_boundary_layer/neutral/README.html#results>`__
 
-#. `Convectively unstable ABL <atmospheric_boundary_layer/convective_abl_nrel5mw/README.html>`__: The precursor ABL used for the NREL5MW blade resolved and ALM studies.
+#. `Convectively unstable ABL <atmospheric_boundary_layer/convective_abl_nrel5mw/README.html>`__: The precursor ABL flow used for the NREL5MW blade resolved and ALM studies.
   
    * `Setup <atmospheric_boundary_layer/convective_abl_nrel5mw/setup/README.html>`__
    * `Performance <atmospheric_boundary_layer/convective_abl_nrel5mw/performance/README.html>`__
