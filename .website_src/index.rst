@@ -22,7 +22,6 @@ AMR-Wind
    :maxdepth: 2
 
    amr-wind/benchmarks
-   amr-wind/published
 
 
 Nalu-Wind
