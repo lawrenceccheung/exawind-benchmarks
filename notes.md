@@ -50,12 +50,12 @@ The following people contributed to the development of the ExaWind benchmark cas
 
 |   |   |
 |---|---|
-| Shreyas Bidadi       | National Renewable Energy Laboratories |
+| Shreyas Bidadi       | National Renewable Energy Laboratory |
 | Lawrence Cheung      | Sandia National Laboratories |
 | Nate deVelder        | Sandia National Laboratories |
-| Marc Henry de Frahan | National Renewable Energy Laboratories |
-| Michael Kuhn         | National Renewable Energy Laboratories |
-| Bumseok Lee          | National Renewable Energy Laboratories |
+| Marc Henry de Frahan | National Renewable Energy Laboratory |
+| Michael Kuhn         | National Renewable Energy Laboratory |
+| Bumseok Lee          | National Renewable Energy Laboratory |
 | Neil Matula          | Sandia National Laboratories |
-| Prakash Mohan        | National Renewable Energy Laboratories |
+| Prakash Mohan        | National Renewable Energy Laboratory |
 | Gopal Yalla          | Sandia National Laboratories |
