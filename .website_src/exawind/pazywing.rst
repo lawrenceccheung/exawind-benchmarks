@@ -8,4 +8,4 @@ Pazy Wing
    * `Code performance <Pazy_Wing/README.html#code-performance>`__
    * `Results <Pazy_Wing/README.html#results>`__
 
-`View the case in the github repository <https://github.com/Exawind/exawind-benchmarks/>`__
+`View the case in the github repository <https://github.com/Exawind/exawind-benchmarks/tree/main/exawind/Pazy_Wing>`__
