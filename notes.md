@@ -58,4 +58,6 @@ The following people contributed to the development of the ExaWind benchmark cas
 | Bumseok Lee          | National Renewable Energy Laboratory |
 | Neil Matula          | Sandia National Laboratories |
 | Prakash Mohan        | National Renewable Energy Laboratory |
+| Matteo Polimeno      | National Renewable Energy Laboratory |
+| Ganesh Vijayakumar   | National Renewable Energy Laboratory |
 | Gopal Yalla          | Sandia National Laboratories |
