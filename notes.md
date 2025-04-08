@@ -29,7 +29,7 @@ $ ./util/downloadmeshes.sh
 
 Note that meshes for only a particular subset of cases can be downloaded using the `--filter` option.  For instance, to download only the NACA 0021 airfoil cases, run the following:  
 
-```
+```bash
 $ ./util/downloadmeshes.sh --filter naca0021
 ```
 
