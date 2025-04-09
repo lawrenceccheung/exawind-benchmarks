@@ -32,4 +32,10 @@ Nalu-Wind
 
    nalu-wind/benchmarks
 
+Notes
+---------
+
+.. toctree::
+   :maxdepth: 2
+
    notes
