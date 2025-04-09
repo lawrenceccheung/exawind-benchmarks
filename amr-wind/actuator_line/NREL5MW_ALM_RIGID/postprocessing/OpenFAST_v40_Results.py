@@ -102,9 +102,20 @@ old:
     legendopts: {'loc':'upper right'}
     savefile: ../results/images/OpenFAST_T0_GenPwr.png
     csvfiles:
-    - {'file':'RESULTSDIR/NREL5MW.csv', 'xcol':'Time', 'ycol':'GenPwr', 'lineopts':{'color':'b', 'lw':1, 'linestyle':'-', 'label':'NREL5MW ALM v4.0.2'}}    
+    - {'file':'RESULTSDIR/NREL5MW.csv', 'xcol':'Time', 'ycol':'GenPwr', 'lineopts':{'color':'b', 'lw':1, 'linestyle':'-', 'label':'NREL5MW RIGID'}}    
 
 plotcsv:
+  - name: Power
+    xlabel: 'Time [s]'
+    ylabel: 'Power [kW]'
+    title: 'Turbine power'
+    figsize: [10,4]
+    legendopts: {'loc':'upper right'}
+    #savefile: ../results/images/OpenFAST_T0_GenPwr.png
+    csvfiles:
+    - {'file':'RESULTSDIR/NREL5MW.csv', 'xcol':'Time', 'ycol':'RotTorq', 
+       'yscalefunc':'lambda y:y*12.1/60*2*3.1415926*0.944', 'lineopts':{'color':'b', 'lw':1, 'linestyle':'-', 'label':'NREL5MW RIGID'}}   
+    
   - name: Thrust
     xlabel: 'Time [s]'
     ylabel: 'RotThrust [kN]'
@@ -113,7 +124,7 @@ plotcsv:
     legendopts: {'loc':'upper right'}
     savefile: ../results/images/OpenFAST_T0_RotThrust.png
     csvfiles:
-    - {'file':'RESULTSDIR/NREL5MW.csv', 'xcol':'Time', 'ycol':'RotThrust', 'lineopts':{'color':'b', 'lw':1, 'linestyle':'-', 'label':'NREL5MW ALM v4.0.2'}}    
+    - {'file':'RESULTSDIR/NREL5MW.csv', 'xcol':'Time', 'ycol':'RotThrust', 'lineopts':{'color':'b', 'lw':1, 'linestyle':'-', 'label':'NREL5MW RIGID'}}    
 
   - name: RPM
     xlabel: 'Time [s]'
@@ -123,7 +134,7 @@ plotcsv:
     legendopts: {'loc':'upper right'}
     savefile: ../results/images/OpenFAST_T0_RotSpeed.png
     csvfiles:
-    - {'file':'RESULTSDIR/NREL5MW.csv', 'xcol':'Time', 'ycol':'RotSpeed', 'lineopts':{'color':'b', 'lw':1, 'linestyle':'-', 'label':'NREL5MW ALM v4.0.2'}}    
+    - {'file':'RESULTSDIR/NREL5MW.csv', 'xcol':'Time', 'ycol':'RotSpeed', 'lineopts':{'color':'b', 'lw':1, 'linestyle':'-', 'label':'NREL5MW RIGID'}}    
 
   - name: Pitch
     xlabel: 'Time [s]'
@@ -133,7 +144,7 @@ plotcsv:
     legendopts: {'loc':'upper right'}
     savefile: ../results/images/OpenFAST_T0_BldPitch1.png
     csvfiles:
-    - {'file':'RESULTSDIR/NREL5MW.csv', 'xcol':'Time', 'ycol':'BldPitch1', 'lineopts':{'color':'b', 'lw':1, 'linestyle':'-', 'label':'NREL5MW ALM v4.0.2'}}    
+    - {'file':'RESULTSDIR/NREL5MW.csv', 'xcol':'Time', 'ycol':'BldPitch1', 'lineopts':{'color':'b', 'lw':1, 'linestyle':'-', 'label':'NREL5MW RIGID'}}    
 
   - name: RotTorque
     xlabel: 'Time [s]'
@@ -143,7 +154,7 @@ plotcsv:
     legendopts: {'loc':'upper right'}
     savefile: ../results/images/OpenFAST_T0_RotTorq.png
     csvfiles:
-    - {'file':'RESULTSDIR/NREL5MW.csv', 'xcol':'Time', 'ycol':'RotTorq', 'lineopts':{'color':'b', 'lw':1, 'linestyle':'-', 'label':'NREL5MW ALM v4.0.2'}}    
+    - {'file':'RESULTSDIR/NREL5MW.csv', 'xcol':'Time', 'ycol':'RotTorq', 'lineopts':{'color':'b', 'lw':1, 'linestyle':'-', 'label':'NREL5MW RIGID'}}    
 
 """
 f = io.StringIO(stringReplaceDict(yamlstring, replacedict))

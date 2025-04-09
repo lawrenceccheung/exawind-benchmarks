@@ -42,7 +42,12 @@ modelparams:
     YawDOF:   False
     FlapDOF1: False
     FlapDOF2: False
-    EdgeDOF1: False
+    EdgeDOF:  False
+    DrTrDOF:  False
+    TwFADOF1: False
+    TwFADOF2: False
+    TwSSDOF1: False
+    TwSSDOF2: False
     RotSpeed: 12.1
     BlPitch(1): 0.0
     BlPitch(2): 0.0

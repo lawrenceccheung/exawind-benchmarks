@@ -90,8 +90,8 @@ bliststr  = '[Time, '+', '.join(blist)+']'
 
 
 # Get the blade stations
-rundir = '/gpfs/lcheung/HFM/exawind-benchmarks/NREL5MW_ALM_BD_OFv402_ROSCO/'
-bladefile = rundir+'/T0_NREL5MW_v402_ROSCO/openfast/5MW_Baseline/NRELOffshrBsline5MW_AeroDyn_blade.dat'
+rundir = '/gpfs/lcheung/HFM/exawind-benchmarks/NREL5MW_ALM_RIGID_OFv402/'
+bladefile = rundir+'/T0_NREL5MW_v402_RIGID/openfast/5MW_Baseline/NRELOffshrBsline5MW_AeroDyn_blade.dat'
 bladedat  = np.genfromtxt(bladefile, skip_header=6, skip_footer=2)
 
 
@@ -119,7 +119,7 @@ trange: &trange [300, 900]   # Note: add 15,000 sec to get AMR-Wind time
 openfast:
 # For FSI case
 - name: NREL5MW_SECLOADS
-  filename: RUNDIR/T0_NREL5MW_v402_ROSCO/openfast-cpp/5MW_Land_DLL_WTurb_cpp/5MW_Land_DLL_WTurb_cpp.out
+  filename: RUNDIR/T0_NREL5MW_v402_RIGID/openfast-cpp/5MW_Land_DLL_WTurb_cpp/5MW_Land_DLL_WTurb_cpp.out
   vars: BLADEVARS
   output_dir: RESULTSDIR
   csv:  # Store information to CSV files
@@ -133,14 +133,14 @@ f = io.StringIO(stringReplaceDict(yamlstring, replacedict))
 yamldict = Loader(f, **loaderkwargs)
 
 
-# In[9]:
+# In[ ]:
 
 
 # Run the driver
 ppeng.driver(yamldict, verbose=True)
 
 
-# In[10]:
+# In[ ]:
 
 
 d = makeSecBladeDF(replacedict['RESULTSDIR']+'/NREL5MW_SECLOADS_mean.csv', bladedat[:,0], blistdict)
@@ -149,7 +149,7 @@ pddf = pd.DataFrame(d).to_csv(replacedict['RESULTSDIR']+'/NREL5MW_SECLOADS_mean_
 
 # ## Plot the blade loading
 
-# In[11]:
+# In[ ]:
 
 
 yamlstring="""
@@ -201,14 +201,14 @@ f = io.StringIO(stringReplaceDict(yamlstring, replacedict))
 yamldict = Loader(f, **loaderkwargs)
 
 
-# In[12]:
+# In[ ]:
 
 
 # Run the driver
 ppeng.driver(yamldict, verbose=True)
 
 
-# In[13]:
+# In[ ]:
 
 
 # Write out the notebook to a python script

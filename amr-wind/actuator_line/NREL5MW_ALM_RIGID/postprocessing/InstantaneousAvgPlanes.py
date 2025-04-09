@@ -3,7 +3,7 @@
 
 # # Instantaneous planes from NREL5MW ALM case
 
-# In[1]:
+# In[ ]:
 
 
 # Add any possible locations of amr-wind-frontend here
@@ -22,7 +22,7 @@ plt.show(block=False)
 import postproengine as ppeng
 
 
-# In[2]:
+# In[ ]:
 
 
 # Load ruamel or pyyaml as needed
@@ -54,14 +54,14 @@ def formatplot(fig, ax):
 ppeng.formatplot = formatplot
 
 
-# In[3]:
+# In[ ]:
 
 
 replacedict={'RUNDIR':'/gpfs/lcheung/HFM/exawind-benchmarks/NREL5MW_ALM_RIGID_OFv402/',
             }
 
 
-# In[4]:
+# In[ ]:
 
 
 yamlstring="""
