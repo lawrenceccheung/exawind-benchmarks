@@ -54,6 +54,7 @@ The following people contributed to the development of the ExaWind benchmark cas
 | Lawrence Cheung      | Sandia National Laboratories |
 | Nate deVelder        | Sandia National Laboratories |
 | Marc Henry de Frahan | National Renewable Energy Laboratory |
+| Wyatt Horne          | Sandia National Laboratories |
 | Michael Kuhn         | National Renewable Energy Laboratory |
 | Bumseok Lee          | National Renewable Energy Laboratory |
 | Neil Matula          | Sandia National Laboratories |
