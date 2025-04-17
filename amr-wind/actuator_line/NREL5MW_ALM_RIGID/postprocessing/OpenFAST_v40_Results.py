@@ -93,16 +93,6 @@ openfast:
     - mean
     trange: *trange
 
-old:
-  - name: Power
-    xlabel: 'Time [s]'
-    ylabel: 'Power [kW]'
-    title: 'Turbine power'
-    figsize: [10,4]
-    legendopts: {'loc':'upper right'}
-    savefile: ../results/images/OpenFAST_T0_GenPwr.png
-    csvfiles:
-    - {'file':'RESULTSDIR/NREL5MW.csv', 'xcol':'Time', 'ycol':'GenPwr', 'lineopts':{'color':'b', 'lw':1, 'linestyle':'-', 'label':'NREL5MW RIGID'}}    
 
 plotcsv:
   - name: Power
@@ -111,7 +101,7 @@ plotcsv:
     title: 'Turbine power'
     figsize: [10,4]
     legendopts: {'loc':'upper right'}
-    #savefile: ../results/images/OpenFAST_T0_GenPwr.png
+    savefile: ../results/images/OpenFAST_T0_ElecPwr.png
     csvfiles:
     - {'file':'RESULTSDIR/NREL5MW.csv', 'xcol':'Time', 'ycol':'RotTorq', 
        'yscalefunc':'lambda y:y*12.1/60*2*3.1415926*0.944', 'lineopts':{'color':'b', 'lw':1, 'linestyle':'-', 'label':'NREL5MW RIGID'}}   
