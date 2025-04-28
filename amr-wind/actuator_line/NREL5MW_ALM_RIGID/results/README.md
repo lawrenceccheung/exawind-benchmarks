@@ -35,7 +35,7 @@ where $\eta$ is the generator efficiency (0.944), $\Omega$ is the rotor speed in
 
 The full time history of the turbine power, rotor thrust, rotor speed, blade pitch, and rotor torque are also shown here:
 
-![GenPwr](images/OpenFAST_T0_GenPwr.png)
+![ElecPwr](images/OpenFAST_T0_ElecPwr.png)
 ![RotThrust](images/OpenFAST_T0_RotThrust.png)
 ![RotSpeed](images/OpenFAST_T0_RotSpeed.png)
 ![BldPitch1](images/OpenFAST_T0_BldPitch1.png)
