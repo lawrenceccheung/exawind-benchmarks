@@ -1,4 +1,4 @@
-# Postprocessing NREL5MW AMR-Wind RIDID results
+# Postprocessing NREL5MW AMR-Wind RIGID results
 
 **Contents**
 
