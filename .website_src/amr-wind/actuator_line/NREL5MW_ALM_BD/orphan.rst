@@ -3,15 +3,15 @@
 .. toctree::
    :hidden:
 
-   performance/README.md
-   setup/README.md
+   postprocessing/InstantaneousAvgPlanes.ipynb
    README.md
-   results/README.md
    postprocessing/AVGPlanes.ipynb
    setup/SetupALM_OFv402.ipynb
-   postprocessing/InstantaneousAvgPlanes.ipynb
+   setup/README.md
    postprocessing/OpenFAST_SectionalLoading.ipynb
+   results/README.md
+   performance/README.md
+   postprocessing/README.md
    ../../atmospheric_boundary_layer/convective_abl_nrel5mw/README.md
    postprocessing/OpenFAST_v40_Results.ipynb
-   postprocessing/README.md
 

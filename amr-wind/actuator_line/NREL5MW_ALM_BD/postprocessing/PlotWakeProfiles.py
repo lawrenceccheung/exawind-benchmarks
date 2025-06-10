@@ -28,10 +28,9 @@ try:
     import ruamel.yaml as yaml
     print("# Loaded ruamel.yaml")
     useruamel=True
-    loaderkwargs = {'Loader':yaml.RoundTripLoader}
+    loaderkwargs = {}
     dumperkwargs = {'Dumper':yaml.RoundTripDumper, 'indent':4, 'default_flow_style':False} 
     yaml = yaml.YAML(typ='rt')
-    #yaml = YAML(typ='rt')
 except:
     import yaml as yaml
     print("# Loaded yaml")
@@ -131,14 +130,14 @@ f = io.StringIO(stringReplaceDict(yamlstring, replacedict))
 yamldict = Loader(f, **loaderkwargs)
 
 
-# In[ ]:
+# In[6]:
 
 
 # Run the driver
 ppeng.driver(yamldict, verbose=True)
 
 
-# In[ ]:
+# In[7]:
 
 
 # Write out the notebook to a python script
